@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Attendance</title>
+</head>
+<body>
+    <h1>Attendance Page</h1>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>User</th>
+            <th>Time</th>
+        </tr>
+        {% for record in records %}
+        <tr>
+            <td>{{ record[0] }}</td>
+            <td>{{ record[1] }}</td>
+            <td>{{ record[2] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br>
+    <a href="{{ url_for('download') }}">Download Attendance (CSV/PDF)</a>
+    <br>
+    <a href="{{ url_for('create_user') }}">Create New User</a>
+</body>
+</html>
